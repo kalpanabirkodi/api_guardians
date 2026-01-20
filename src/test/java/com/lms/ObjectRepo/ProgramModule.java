@@ -65,20 +65,20 @@ private final TestContext context;
             break;
 
         case "POST":
-            System.out.println("════════════════════════════════════════");
-            System.out.println("SENDING POST REQUEST");
-            System.out.println("Endpoint: " + endpoint);
-            System.out.println("Request Body: " + requestBody);
-            System.out.println("════════════════════════════════════════");
+            // System.out.println("════════════════════════════════════════");
+            // System.out.println("SENDING POST REQUEST");
+            // System.out.println("Endpoint: " + endpoint);
+            // System.out.println("Request Body: " + requestBody);
+            // System.out.println("════════════════════════════════════════");
             
             response = request.pathParams(pathParams).body(requestBody).post(endpoint);
             
-            System.out.println("════════════════════════════════════════");
-            System.out.println("RESPONSE RECEIVED");
-            System.out.println("Status Code: " + response.getStatusCode());
-            System.out.println("Response Body:");
-            System.out.println(response.asPrettyString());
-            System.out.println("════════════════════════════════════════");
+            // System.out.println("════════════════════════════════════════");
+            // System.out.println("RESPONSE RECEIVED");
+            // System.out.println("Status Code: " + response.getStatusCode());
+            // System.out.println("Response Body:");
+            // System.out.println(response.asPrettyString());
+            // System.out.println("════════════════════════════════════════");
             break;
 
         default:
