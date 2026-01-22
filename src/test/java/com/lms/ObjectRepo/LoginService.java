@@ -17,8 +17,10 @@ import com.lms.utils.TestContext;
 import com.lms.utils.TokenManager;
 
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class LoginService {
     private final TestContext context;
@@ -145,7 +147,6 @@ public class LoginService {
     public void setAuthorizationBearer() {
         if (TokenManager.hasToken()) {
             String token = TokenManager.getToken();
-
         }
     }
 
@@ -225,5 +226,16 @@ public class LoginService {
         // If we do get a response, check the status code
         assertEquals("Expected " + expectedStatusCode + " status code",
                 expectedStatusCode.intValue(), context.getLastResponse().statusCode());
+    }
+
+    public void makeForgotPwdRequestWithNullBody(String method) {
+        try {
+            Response response = RestAssuredUtil.makeRequest(method, context.getContentType(), null,
+                    context.getEndPoint());
+            context.setLastResponse(response);
+        } catch (Exception e) {
+            System.out.println("Error: Failed to call " + method + " HTTPS method.");
+            context.setLastResponse(null);
+        }
     }
 }

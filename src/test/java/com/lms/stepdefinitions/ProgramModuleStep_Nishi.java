@@ -94,12 +94,12 @@ public class ProgramModuleStep_Nishi {
 		;
 	}
 
-	@Then("Admin receives {int} Bad Request Status with message and boolean success details")
-	public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer int1) {
-		logger.info("User gets error message for not found");
-		programModule.validateResponseCode(404);
-		;
-	}
+	// @Then("Admin receives {int} Bad Request Status with message and boolean success details")
+	// public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer int1) {
+	// 	logger.info("User gets error message for not found");
+	// 	programModule.validateResponseCode(404);
+	// 	;
+	// }
 
 	@Given("Admin creates POST Request for the LMS with invalid request body for program")
 	public void admin_creates_post_request_for_the_lms_with_invalid_request_body_for_program() {
@@ -202,12 +202,18 @@ public class ProgramModuleStep_Nishi {
 	    programModule.prepareRequest("RetrieveProgramvalidIDInvalidEndpoint");
 	}
 
-	@Then("Admin receives {int} Not Found Status with message and boolean success details")
-	public void admin_receives_not_found_status_with_message_and_boolean_success_details_program(Integer int1) {
-		logger.info("User gets error message for not found");
-		programModule.validateResponseCode(404);
+	// @Then("Admin receives {int} Not Found Status with message and boolean success details")
+	// public void admin_receives_not_found_status_with_message_and_boolean_success_details_program(Integer int1) {
+	// 	logger.info("User gets error message for not found");
+	// 	programModule.validateResponseCode(404);
  
-	}
+	// }
+
+
+	@When("Admin sends HTTPS Request  and requesdUt Body  \\(missing mandatory fields)")
+public void admin_sends_https_request_and_requesd_ut_body_missing_mandatory_fields() {
+
+}
 
 
 }

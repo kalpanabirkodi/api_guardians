@@ -16,7 +16,7 @@ import io.qameta.allure.Step;
 public class Hooks {
 
     public static RequestSpecification request;
-    private static ThreadLocal<RequestSpecification> requestSpec = new ThreadLocal<>();
+    private static ThreadLocal<RequestSpecification> requestSpec = new ThreadLocal<>(); 
     public static ThreadLocal<Boolean> skipAuthFlag = new ThreadLocal<>();
     
     @Before

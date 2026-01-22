@@ -62,7 +62,8 @@ public class UserStep {
 	}
 	@When("Admin sends HTTPS Request to get user with program ID    #\\(Mandatory : program Id, batch Id ,role id, admin id, admin role program batch status)")
 	public void admin_sends_https_request_to_get_user_with_program_id_mandatory_program_id_batch_id_role_id_admin_id_admin_role_program_batch_status() {
-	    
+	
+	
 	}
 	@When("Admin sends HTTPS Request with admin ID with invalid admin ID")
 	public void admin_sends_https_request_with_admin_id_with_invalid_admin_id() {

@@ -83,7 +83,7 @@ Feature: User Login Controller
 
     Scenario: Check if admin able to generate token with null request body
       Given Admin creates request with null body for UserLogin test case "TC17"
-      When Admin calls POST Https method for forgot password with valid endpoint
+      When Admin calls POST Https method for forgot password with valid endpoint with null body
       Then Admin receives 400 with message "Email[Id is m]andatory"
 
     Scenario: Check if admin able to generate token with invalid content type
@@ -129,7 +129,7 @@ Feature: User Login Controller
 
     Scenario: Check if admin able to logout with invalid method
       Given Admin creates request for logout for UserLogin test case "TC22"
-      When Admin calls POST Https method with invalid endpoint
+      When Admin calls POST Https method with invalid method
       Then Admin receives 405 method not allowed
 
 # # RESET PASSWORD
@@ -140,36 +140,36 @@ Feature: User Login Controller
 #     #   Then Admin receives 200 ok and response with "Password saved" and true
 
     Scenario: Check if admin able to login with old password
-      Given Admin creaes request with valid email and old password for UserLogin test case "TC26"
+      Given Admin creates request with valid email and old password for UserLogin test case "TC26"
       When Admin calls Post Https method with valid endpoint
       Then Admin receives 401 unauthorized
 
     Scenario: Check if admin able to resetPassword with special characters in password
-      Given Admin creaes request new password with special characters for UserLogin test case "TC27"
+      Given Admin creates request new password with special characters for UserLogin test case "TC27"
       When Admin calls Post Https method with valid endpoint
       Then Admin receives 400 Bad request
 
     Scenario: Check if admin able to resetPassword with invalid baseURL
-      Given Admin creaes request with valid email and new password for UserLogin test case "TC28"
+      Given Admin creates request with valid email and new password for UserLogin test case "TC28"
       When Admin calls Post Https method with invalid baseURL
       Then Admin receives 404 Not found for invalid baseUrl
 
     Scenario: Check if admin able to resetPassword with invalid endpoint
-      Given Admin creaes request with valid email and new password for UserLogin test case "TC29"
+      Given Admin creates request with valid email and new password for UserLogin test case "TC29"
       When Admin calls Post Https method with invalid endpoint
       Then Admin receives 404 not found
 
     Scenario: Check if admin able to resetPassword with invalid content type
-      Given Admin creaes request with valid data and invalid content type for UserLogin test case "TC30"
-      When Admin calls Post Https method with valid endpoint
+      Given Admin creates request with valid data and invalid content type for UserLogin test case "TC30"
+      When Admin calls Post Https method with invalid content type
       Then Admin receives 415 unsupported media type
 
     Scenario: Check if admin able to resetPassword with invalid method
-      Given Admin creaes request with valid email and new password for UserLogin test case "TC31"
+      Given Admin creates request with valid email and new password for UserLogin test case "TC31"
       When Admin calls GET Https method with valid endpoint
       Then Admin receives 405 Method not Allowed
 
     Scenario: Check if admin able to resetPassword with invalid email
-      Given Admin creaes request new password with invalid email for UserLogin test case "TC32"
+      Given Admin creates request new password with invalid email for UserLogin test case "TC32"
       When Admin calls Post Https method with valid endpoint
       Then Admin receives 400 Bad request response with "Invalid"

@@ -233,13 +233,13 @@ public class LoginStep {
         loginService.assertStatusCodeWithMessageAndSuccess(expectedStatusCode, message);
     }
 
-    @Given("Admin creaes request with valid email and new password for UserLogin test case {string}")
-    public void Admin_creaes_request_with_valid_email_and_new_password_for_UserLogin_test_case(String testCaseId) {
+    @Given("Admin creates request with valid email and new password for UserLogin test case {string}")
+    public void Admin_creates_request_with_valid_email_and_new_password_for_UserLogin_test_case(String testCaseId) {
         loginService.loadResetPasswordData(testCaseId);
     }
 
-    @Given("Admin creaes request with valid email and old password for UserLogin test case {string}")
-    public void Admin_creaes_request_with_valid_email_and_old_password_for_UserLogin_test_case(String testCaseId) {
+    @Given("Admin creates request with valid email and old password for UserLogin test case {string}")
+    public void Admin_creates_request_with_valid_email_and_old_password_for_UserLogin_test_case(String testCaseId) {
         loginService.loadResetPasswordData(testCaseId);
     }
 
@@ -248,8 +248,8 @@ public class LoginStep {
         loginService.assertStatusCodeWithResponseMessage(expectedStatusCode, message);
     }
 
-    @Given("Admin creaes request new password with invalid email for UserLogin test case {string}")
-    public void Admin_creaes_request_new_password_with_invalid_email_for_UserLogin_test_case(String testCaseId) {
+    @Given("Admin creates request new password with invalid email for UserLogin test case {string}")
+    public void Admin_creates_request_new_password_with_invalid_email_for_UserLogin_test_case(String testCaseId) {
         loginService.loadResetPasswordData(testCaseId);
     }
 
@@ -263,8 +263,8 @@ public class LoginStep {
         loginService.makeLogoutRequest();
     }
 
-    @Given("Admin creaes request with valid data and invalid content type for UserLogin test case {string}")
-    public void Admin_creaes_request_with_valid_data_and_invalid_content_type_for_UserLogin_test_case(String testCaseId) {
+    @Given("Admin creates request with valid data and invalid content type for UserLogin test case {string}")
+    public void Admin_creates_request_with_valid_data_and_invalid_content_type_for_UserLogin_test_case(String testCaseId) {
         loginService.loadLoginData(testCaseId);
     }
 
@@ -273,8 +273,8 @@ public class LoginStep {
         loginService.makeRequestWithInvalidBaseURL();
     }
 
-    @Given("Admin creaes request new password with special characters for UserLogin test case {string}")
-    public void Admin_creaes_request_new_password_with_special_characters_for_UserLogin_test_case(String testCaseId) {
+    @Given("Admin creates request new password with special characters for UserLogin test case {string}")
+    public void Admin_creates_request_new_password_with_special_characters_for_UserLogin_test_case(String testCaseId) {
         loginService.loadResetPasswordData(testCaseId);
     }
 
@@ -282,4 +282,16 @@ public class LoginStep {
     public void Admin_receives_Not_found_for_invalid_baseUrl(int expectedStatusCode) {
         loginService.assertInvalidrequestError(expectedStatusCode);
     }
+
+    @When("Admin calls POST Https method for forgot password with valid endpoint with null body")
+    public void Admin_calls_POST_Https_method_for_forgot_password_with_valid_endpoint_with_null_body() {
+            loginService.makeForgotPwdRequestWithNullBody("POST");
+    }
+
+    @When("Admin calls POST Https method with invalid method")
+    public void Admin_calls_POST_Https_method_with_invalid_method() {
+        loginService.makeRequestWithMethod("POST");
+    }
+
+   
 }
